@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Coffee</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: linear-gradient(to right, #1b1b1b, #1a1a1a, #0a0a0a); /* Dark gradient background for Solo Leveling theme */
+      color: #ffffff; /* White text for contrast */
+    }
+
+    h1 {
+      color: #3b8ec3; /* Cyan color for the header */
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px rgba(59, 142, 195, 0.8); /* Glowing cyan effect */
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: rgba(30, 30, 30, 0.9); /* Dark semi-transparent form background */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Darker shadow effect */
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #3b8ec3; /* Cyan color for labels */
+      text-shadow: 0 0 5px rgba(59, 142, 195, 0.5); /* Soft glow effect */
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background-color: rgba(255, 255, 255, 0.1); /* Dark background for input fields */
+      border: 1px solid #3b8ec3; /* Cyan border color */
+      color: #ffffff; /* White text in input fields */
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: #f56a79; /* Red border on focus */
+      background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter background on focus */
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #f56a79; /* Red button color */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #3b8ec3; /* Cyan color on hover */
+      transform: scale(1.05); /* Slight scale-up effect on hover */
+    }
+
+    a {
+      text-decoration: none;
+      color: #3b8ec3; /* Cyan color for links */
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+      text-align: center;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #f56a79; /* Red color on hover */
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>Add New Coffee</h1>
+
+<form action="/save" method="post">
+  <label>Name: <input type="text" name="name" required></label>
+  <label>Type: <input type="text" name="type" required></label>
+  <label>Size: <input type="text" name="size" required></label>
+  <label>Price: <input type="number" step="0.01" name="price" required></label>
+  <label>Roast Level: <input type="text" name="roastLevel" required></label>
+  <label>Origin: <input type="text" name="origin" required></label>
+  <label>Decaf:
+    <select name="isDecaf">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </label>
+  <label>Stock: <input type="number" name="stock" required></label>
+  <label>Flavor Notes (comma-separated):
+    <input type="text" name="flavorNotes">
+  </label>
+  <label>Brew Method: <input type="text" name="brewMethod" required></label>
+
+  <button type="submit">Add Coffee</button>
+</form>
+
+<a href="/">Back to List</a>
+
+</body>
+</html>

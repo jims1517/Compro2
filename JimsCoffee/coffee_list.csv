@@ -1,0 +1,6 @@
+ID,Name,Type,Size,Price,Roast Level,Origin,IsDecaf,Stock,Flavor Notes,Brew Method
+1,Espresso,Arabica,Small,3.5,Dark,Ethiopia,false,10,Chocolate;Nutty,Espresso
+2,Latte,Arabica,Medium,4.5,Medium,Brazil,false,8,Creamy;Sweet,Drip
+3,Cappuccino,Robusta,Large,5.0,Medium,Colombia,false,12,Fruity;Bold,French Press
+4,Mocha,Arabica,Medium,4.75,Dark,Guatemala,false,6,Chocolate;Smooth,Espresso
+5,Americano,Robusta,Large,3.25,Light,Kenya,false,15,Citrus;Balanced,Drip
