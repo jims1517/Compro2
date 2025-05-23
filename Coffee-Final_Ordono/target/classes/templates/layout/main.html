@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="html(title, link, content)">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:replace="${title}">Responsive Dash</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link th:replace="${link}"/>
+</head>
+<body>
+<aside>
+    <div class="sidebar">
+        <div class="brand">
+            <img src="/images/coffee-logo.jpg" alt="coffee" />
+            <span>Jims Coffee</span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li th:replace="~{components/menu_item :: menuItem('/', 'Home', 'home', ${activeMenu})}"></li>
+                <li th:replace="~{components/menu_item :: menuItem('/catalog', 'Coffee Menu', 'catalog', ${activeMenu})}"></li>
+                <li th:replace="~{components/menu_item :: menuItem('/logout', 'Log Out', 'logout', ${activeMenu})}"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="user-profile">
+        <img src="/images/Photo.jpg" alt="user-profile" />
+        <div>
+            <h1>Jims Harold P. Ordono</h1>
+            <span>Web Developer</span>
+        </div>
+    </div>
+</aside>
+<main th:replace="${content}">dynamic content will be here</main>
+<script>
+    window.addEventListener('load', function () {
+
+        document.querySelectorAll('.menu li').forEach(menu => {
+            menu.addEventListener('click', () => {
+                const url = menu.getAttribute('data-url');
+                location.href = url; //this will redirect to the url
+            });
+        });
+
+    });
+    document.querySelectorAll('.sidebar .menu li').forEach(item => {
+        item.addEventListener('click', () => {
+            document.querySelectorAll('.sidebar .menu li').forEach(li => li.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --font-family: 'Poppins', sans-serif;
+
+    /* Starbucks-Inspired Color Palette */
+    --primary: #00704A; /* Starbucks Green */
+    --secondary: #2e2e2e; /* Dark Text */
+    --accent: #004C2D; /* Deep Green */
+    --background: #f6f6f6; /* Light Background */
+    --container-bg: #ffffff; /* White Container */
+    --card-bg: #f0f0f0; /* Light Gray Card */
+    --btn-view: #00704A;
+    --btn-edit: #004C2D;
+    --btn-delete: #d9534f;
+    --btn-edit-hover: #003020;
+    --btn-delete-hover: #b52a2a;
+    --btn-view-hover: #005032;
+    --border-radius: 0.75rem;
+    --transition: all 0.2s ease-in-out;
+    --box-shadow: 0 6px 20px rgba(0, 112, 74, 0.3);
+}
+
+/* Main Section */
+main {
+    padding: 2rem;
+    font-family: var(--font-family);
+    background-color: var(--background);
+    color: var(--secondary);
+}
+
+.container {
+    background-color: var(--container-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid var(--accent);
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 112, 74, 0.8);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    background: var(--card-bg);
+    color: var(--secondary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+}
+
+/* Buttons */
+button, .button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.65rem 1.2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+button:hover, .button:hover {
+    background: var(--accent);
+
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--accent);
+    text-align: center;
+    font-size: 1rem;
+    color: var(--secondary);
+}
+
+th {
+    background-color: var(--primary);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.action-links a {
+    padding: 6px 12px;
+    margin: 4px 2px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.view-btn {
+    background-color: var(--btn-view);
+}
+.view-btn:hover {
+    background-color: var(--btn-view-hover);
+}
+
+.edit-btn {
+    background-color: var(--btn-edit);
+}
+.edit-btn:hover {
+    background-color: var(--btn-edit-hover);
+}
+
+.delete-btn {
+    background-color: var(--btn-delete);
+}
+.delete-btn:hover {
+    background-color: var(--btn-delete-hover);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    main {
+        padding: 1rem;
+    }
+    .container {
+        padding: 1rem;
+    }
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    input[type="text"] {
+        width: 100%;
+    }
+}

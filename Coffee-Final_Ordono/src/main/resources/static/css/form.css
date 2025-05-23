@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --font-sans: 'Poppins', system-ui, sans-serif;
+
+    /* Starbucks Theme Palette */
+    --primary: #00704A; /* Starbucks Green */
+    --secondary: #2e2e2e; /* Dark Text */
+    --accent: #004C2D; /* Deep Green Accent */
+    --background: #f6f6f6; /* Light Background */
+    --card-bg: #ffffff; /* White Card Background */
+    --form-border: #004C2D; /* Dark Green Border */
+
+    --error-bg: #2a2a2a;
+    --error-border: #d9534f;
+    --error-text: #ff5555;
+
+    --border-radius: 0.75rem;
+    --transition: all 0.2s ease-in-out;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--secondary);
+}
+
+h1 {
+    margin-top: -50px;
+    margin-bottom: 1rem;
+    text-align: left;
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 112, 74, 0.8);
+}
+
+/* Form Styling */
+form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 20px rgba(0, 112, 74, 0.3);
+    margin: 0 auto;
+    max-width: 1000px;
+    font-family: var(--font-sans);
+    border: 2px solid var(--form-border);
+}
+
+form > div {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--form-border);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: #f0f0f0;
+    color: var(--secondary);
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+}
+
+/* File Upload Styling */
+label.file-upload {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    user-select: none;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 112, 74, 0.3);
+}
+
+label.file-upload:hover {
+    background: var(--accent);
+    box-shadow: 0 6px 12px rgba(0, 112, 74, 0.5);
+}
+
+/* Buttons */
+button,
+a {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    font-family: var(--font-sans);
+    box-shadow: 0 4px 8px rgba(0, 112, 74, 0.3);
+}
+
+button:hover,
+a:hover {
+    background: #00502D;
+    box-shadow: 0 6px 12px rgba(0, 112, 74, 0.5);
+}
+
+/* Error Handling */
+.error {
+    color: var(--error-text);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+input.error,
+select.error,
+textarea.error,
+input[type="number"].error {
+    border-color: var(--error-border);
+    background-color: var(--error-bg);
+    color: var(--error-text);
+}
+
+/* Card Component Styling */
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 18px rgba(0, 112, 74, 0.3);
+    color: var(--secondary);
+    border: 2px solid var(--form-border);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    button,
+    .button {
+        width: 100%;
+    }
+}

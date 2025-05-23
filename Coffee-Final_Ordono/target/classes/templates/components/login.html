@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+
+<div class="login-wrapper" th:classappend="${error} ? 'has-error' : ''">
+
+    <!-- Left: Login Form -->
+    <div class="login-form-section">
+        <form method="post" action="/login" th:object="${coffeeUser}">
+            <h2>Login</h2>
+
+            <div th:if="${error}">
+                <p class="error-text" th:text="${error}"></p>
+            </div>
+
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username" th:field="*{username}" autocomplete="off"
+                       th:classappend="${#fields.hasErrors('username')} ? 'error' : ''">
+                <p class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+            </div>
+
+            <div>
+                <label>Password:</label>
+                <input type="password" id="login-password" name="password" th:field="*{password}" autocomplete="off"
+                       th:classappend="${#fields.hasErrors('password')} ? 'error' : ''">
+                <p class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+            </div>
+
+            <div>
+                <button type="submit">Login</button>
+            </div>
+            <div style="margin-top: 0.5rem; text-align: center;">
+                <a href="/change-password" class="change-password-link" style="color: #22a722; text-decoration: underline; font-weight: 500; font-size: 1rem; display: inline-block;">Change Password</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
